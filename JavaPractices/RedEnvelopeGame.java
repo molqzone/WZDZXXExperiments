@@ -29,24 +29,24 @@ public class RedEnvelopeGame {
             moneyList.add(money);
         }
 
-        // Scanner to read user input
-        Scanner scanner = new Scanner(System.in);
-        // Random object to generate random indices
-        Random random = new Random();
+        try (// Scanner to read user input
+        Scanner scanner = new Scanner(System.in)) {
+            // Random object to generate random indices
+            Random random = new Random();
 
-        // Continue drawing until all envelopes are drawn
-        while (!moneyList.isEmpty()) {
-            System.out.print("Press any key to draw a red envelope: ");
-            scanner.nextLine(); // Wait for user input (input not actually used)
+            // Continue drawing until all envelopes are drawn
+            while (!moneyList.isEmpty()) {
+                System.out.print("Press any key to draw a red envelope: ");
+                scanner.nextLine(); // Wait for user input (input not actually used)
 
-            // Randomly select an envelope
-            int index = random.nextInt(moneyList.size());
-            int prize = moneyList.remove(index); // Remove the selected envelope
+                // Randomly select an envelope
+                int index = random.nextInt(moneyList.size());
+                int prize = moneyList.remove(index); // Remove the selected envelope
 
-            // Announce the result
-            System.out.println("Congratulations! You got: " + prize);
+                // Announce the result
+                System.out.println("Congratulations! You got: " + prize);
+            }
         }
-
         // All envelopes have been drawn
         System.out.println("The event is over.");
     }
