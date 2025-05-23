@@ -32,7 +32,6 @@ public class RedEnvelopeGame {
             System.out.println("Press any key to draw a red envelope...");
             scanner.nextLine();
 
-            // Randomly select a envelope
             int index = random.nextInt(moneyList.size());
             int prize = moneyList.remove(index); // Remove the selected envelope from the list
 
